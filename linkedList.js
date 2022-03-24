@@ -15,14 +15,18 @@ class LinkedList {
         if (this.head === null) {
             this.head = new Node(val);
             this.length += 1;
+        } else {
+            this.#append(this.head, val);
+        }
+    }
+
+    #append(curr, val) {
+        if (curr.next === null) {
+            curr.next = new Node(val);
+            this.length += 1;
             return;
         }
-        let curr = this.head;
-        while (curr.next !== null) {
-            curr = curr.next;
-        }
-        curr.next = new Node(val);
-        this.length += 1;
+        this.#append(curr.next, val);
     }
 
     contains(target) {
