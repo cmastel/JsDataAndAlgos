@@ -30,13 +30,15 @@ class LinkedList {
     }
 
     contains(target) {
-        let curr = this.head;
-        while (curr !== null) {
-            if (curr.data === target)
-                return true;
-            curr = curr.next;
-        }
-        return false;
+        return this.#contains(this.head, target);
+    }
+
+    #contains(curr, target) {
+        if (curr === null)
+            return false;
+        if (curr.data === target)
+            return true;
+        return this.#contains(curr.next, target);
     }
 
     print() {
