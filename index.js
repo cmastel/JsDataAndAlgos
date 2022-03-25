@@ -10,7 +10,3 @@ list.append('c');
 list.append('d');
 list.print();
 
-console.log(list.contains('b'))
-console.log(list.contains('a'))
-console.log(list.contains('d'))
-console.log(list.contains('f'))

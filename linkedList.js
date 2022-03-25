@@ -43,12 +43,14 @@ class LinkedList {
 
     print() {
         let str = '';
-        let curr = this.head;
-        while (curr !== null ) {
-            str += curr.data + ' --> ';
-            curr = curr.next;
-        }
+        str += this.#print(this.head);
         console.log(str);
+    }
+
+    #print(curr) {
+        if (curr === null)
+            return '';
+        return curr.data += ' -> ' + this.#print(curr.next)
     }
 
 
