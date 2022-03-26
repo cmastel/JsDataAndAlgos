@@ -29,6 +29,27 @@ class LinkedList {
         this.#append(curr.next, val);
     }
 
+    delete(target) {
+        let prev = null;
+        let curr = this.head;
+        if (curr !== null && curr.data === target) {
+            // scenario where first element of non-empty List is to be deleted, need to reset head
+            this.head = curr.next;
+            this.length -= 1;
+            return true;
+        }
+        while (curr != null) {
+            if (curr.data === target) {
+                prev.next = curr.next;
+                this.length -= 1;
+                return true;
+            }
+            prev = curr;
+            curr = curr.next;
+        }
+        return false;
+    }
+
     contains(target) {
         return this.#contains(this.head, target);
     }
@@ -50,7 +71,7 @@ class LinkedList {
     #print(curr) {
         if (curr === null)
             return '';
-        return curr.data += ' -> ' + this.#print(curr.next)
+        return curr.data + ' -> ' + this.#print(curr.next)
     }
 
 

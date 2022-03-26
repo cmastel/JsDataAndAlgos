@@ -10,3 +10,5 @@ list.append('c');
 list.append('d');
 list.print();
 
+list.delete('b');
+list.print();
