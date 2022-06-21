@@ -1,4 +1,4 @@
-const search = require('../search');
+const search = require('../Algorithms/search');
 
 const testArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 

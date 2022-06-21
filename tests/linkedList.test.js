@@ -1,4 +1,4 @@
-const ll = require('../linkedList');
+const ll = require('../DataStructures/linkedList');
 
 const createList = function() {
     const list = new ll.LinkedList();

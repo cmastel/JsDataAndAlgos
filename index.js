@@ -1,6 +1,6 @@
 // import { linearSearch } from "./search";
-const search = require('./search')
-const ll = require('./linkedList')
+const search = require('./Algorithms/search')
+const ll = require('./DataStructures/linkedList')
 
 
 const list = new ll.LinkedList();
