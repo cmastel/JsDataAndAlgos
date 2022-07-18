@@ -1,19 +1,39 @@
 // import { linearSearch } from "./search";
 const search = require('./Algorithms/search');
+const bt = require('./Algorithms/binaryTree');
 const ll = require('./DataStructures/linkedList');
 const s = require('./DataStructures/stack');
 const q = require('./DataStructures/queue');
+const bn = require('./DataStructures/binaryTree');
 
 
-const myQueue = new q.Queue();
-myQueue.enqueue('a');
-myQueue.enqueue('b');
-myQueue.enqueue('c');
-myQueue.enqueue('d');
-myQueue.print();
+const a = new bn.BinaryNode(2);
+const b = new bn.BinaryNode(8);
+const c = new bn.BinaryNode(-3);
+const d = new bn.BinaryNode(5);
+const e = new bn.BinaryNode(1);
+const f = new bn.BinaryNode(-1);
 
-console.log(myQueue.dequeue());
-myQueue.print();
+a.left = b;
+a.right = c;
+b.left = d;
+b.right = e;
+c.left = f;
+
+// bt.breadthFirstPrint(a);
+// console.log('bfs e', bt.breadthFirstSearch(a, 'e'));
+// console.log('bfs z', bt.breadthFirstSearch(a, 'z'));
+console.log('bfSum', bt.breadthFirstSum(a))
+
+// const myQueue = new q.Queue();
+// myQueue.enqueue('a');
+// myQueue.enqueue('b');
+// myQueue.enqueue('c');
+// myQueue.enqueue('d');
+// myQueue.print();
+
+// console.log(myQueue.dequeue());
+// myQueue.print();
 
 
 // const list = new ll.LinkedList();
