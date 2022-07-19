@@ -14,12 +14,11 @@ module.exports.breadthFirstPrint = function(root) {
     }
 }
 
-module.exports.breadthFirstSearch = function (root, target) {
+module.exports.breadthFirstSearch = function(root, target) {
     const queue = new q.Queue();
     queue.enqueue(root);
     while (queue.length() > 0) {
         const curr = queue.dequeue();
-        console.log(curr.data, target)
         if (curr.data === target)
             return true;
         if (curr.left)
@@ -30,7 +29,7 @@ module.exports.breadthFirstSearch = function (root, target) {
     return false;
 }
 
-module.exports.breadthFirstSum = function (root) {
+module.exports.breadthFirstSum = function(root) {
     const queue = new q.Queue();
     queue.enqueue(root);
     let sum = 0;
@@ -44,4 +43,32 @@ module.exports.breadthFirstSum = function (root) {
         
     }
     return sum;
+}
+
+module.exports.depthFirstPrint = function(root) {
+    // depthFirst traversal uses Stack instead of Queue, therefore we can use the call stack
+    // instead of our own Stack DataStructure (which would look very similar to breadthFirst above)
+    if (root === null)
+        return;
+
+    // pre-order
+    console.log(root.data);
+    this.depthFirstPrint(root.left);
+    this.depthFirstPrint(root.right);
+
+    // post-order
+    // this.depthFirstPrint(root.left);
+    // this.depthFirstPrint(root.right);
+    // console.log(root.data);
+
+    // in-order
+    // this.depthFirstPrint(root.left);
+    // console.log(root.data);
+    // this.depthFirstPrint(root.right);
+}
+
+module.exports.depthFirstSum = function(root) {
+    if (root === null) 
+        return 0;
+    return this.depthFirstSum(root.left) + root.data + this.depthFirstSum(root.right);
 }

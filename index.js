@@ -8,11 +8,11 @@ const bn = require('./DataStructures/binaryTree');
 
 
 const a = new bn.BinaryNode(2);
-const b = new bn.BinaryNode(8);
-const c = new bn.BinaryNode(-3);
-const d = new bn.BinaryNode(5);
-const e = new bn.BinaryNode(1);
-const f = new bn.BinaryNode(-1);
+const b = new bn.BinaryNode(5);
+const c = new bn.BinaryNode(8);
+const d = new bn.BinaryNode(-1);
+const e = new bn.BinaryNode(-2);
+const f = new bn.BinaryNode(9);
 
 a.left = b;
 a.right = c;
@@ -23,7 +23,9 @@ c.left = f;
 // bt.breadthFirstPrint(a);
 // console.log('bfs e', bt.breadthFirstSearch(a, 'e'));
 // console.log('bfs z', bt.breadthFirstSearch(a, 'z'));
-console.log('bfSum', bt.breadthFirstSum(a))
+// console.log('bfSum', bt.breadthFirstSum(a))
+// bt.depthFirstPrint(a);
+console.log(bt.depthFirstSum(a));
 
 // const myQueue = new q.Queue();
 // myQueue.enqueue('a');
