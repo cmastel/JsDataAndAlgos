@@ -24,3 +24,5 @@ module.exports.binarySearch = (array, target) => {
     }
     return -1;
 }
+
+// test
